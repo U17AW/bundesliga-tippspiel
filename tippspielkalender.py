@@ -1,14 +1,14 @@
-from typing import List
+from typing import List, Dict
 
 class Tippspielkalender:
     def __init__(self):
-        # Initialisiert die Liste der Spieltage
-        self.spieltage: List[int] = []
+        # Initialisiert die Liste der Spieltage und deren Begegnungen
+        self.spieltage: Dict[int, List[str]] = {}
 
-    def spieltag_hinzufuegen(self, spieltag: int):
-        # Fügt einen Spieltag zur Liste der Spieltage hinzu
-        self.spieltage.append(spieltag)
+    def spieltag_hinzufuegen(self, spieltag: int, begegnungen: List[str]):
+        # Fügt einen Spieltag mit seinen Begegnungen zur Liste der Spieltage hinzu
+        self.spieltage[spieltag] = begegnungen
 
-    def get_spieltage(self) -> List[int]:
-        # Gibt die Liste der Spieltage zurück
+    def get_spieltage(self) -> Dict[int, List[str]]:
+        # Gibt die Liste der Spieltage und deren Begegnungen zurück
         return self.spieltage
