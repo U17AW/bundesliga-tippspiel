@@ -11,7 +11,13 @@ def main():
     spiel = Tippspiel()
     
     # Benutzereingaben für Tipps abfragen
-    spieltag = int(input("Geben Sie den Spieltag ein: "))
+    while True:
+        try:
+            spieltag = int(input("Geben Sie den Spieltag ein: "))
+            break
+        except ValueError:
+            print("Ungültige Eingabe. Bitte geben Sie eine Zahl ein.")
+    
     begegnungen = kalender.get_spieltage().get(spieltag, [])
     
     if not begegnungen:
@@ -24,7 +30,15 @@ def main():
             break
         
         for begegnung in begegnungen:
-            tipp = int(input(f"Geben Sie den Tipp für {begegnung} ein (1 = Sieg Heimmannschaft, 2 = Unentschieden, 3 = Sieg Gastmannschaft): "))
+            while True:
+                try:
+                    tipp = int(input(f"Geben Sie den Tipp für {begegnung} ein (1 = Sieg Heimmannschaft, 2 = Unentschieden, 3 = Sieg Gastmannschaft): "))
+                    if tipp in [1, 2, 3]:
+                        break
+                    else:
+                        print("Ungültige Eingabe. Bitte geben Sie 1, 2 oder 3 ein.")
+                except ValueError:
+                    print("Ungültige Eingabe. Bitte geben Sie eine Zahl ein.")
             spiel.tipp_abgeben(spieltag, spieler, begegnung, tipp)
     
     # Beispiel-Ergebnisse (könnten auch dynamisch eingegeben werden)
