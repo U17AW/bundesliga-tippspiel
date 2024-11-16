@@ -10,6 +10,13 @@ class Tippspiel:
 
     def tipp_abgeben(self, spieltag: int, spieler: str, begegnung: str, tipp: int):
         # Fügt einen Tipp für eine bestimmte Begegnung eines Spieltags und Spielers hinzu
+        heim_team, gast_team = begegnung.split(' vs ')
+        if not is_valid_team_name(heim_team) or not is_valid_team_name(gast_team):
+            print(f"Ungültige Teamnamen in der Begegnung: {begegnung}")
+            return
+        if tipp not in [1, 2, 3]:
+            print(f"Ungültiger Tipp für die Begegnung: {begegnung}. Bitte geben Sie 1, 2 oder 3 ein.")
+            return
         self.tippabgaben[spieltag][spieler][begegnung] = tipp
 
     def punkteberechnung(self, spieltag: int, ergebnisse: Dict[str, int]):
@@ -26,3 +33,7 @@ class Tippspiel:
         # Sortiert die Spieler nach ihren Punkten in absteigender Reihenfolge und gibt die Rangliste zurück
         self.rangliste_dict = dict(sorted(self.punkte.items(), key=lambda x: x[1], reverse=True))
         return self.rangliste_dict
+
+def is_valid_team_name(team_name):
+    VALID_TEAM_NAMES = ['TeamA', 'TeamB', 'TeamC', 'TeamD', 'TeamE', 'TeamF', 'TeamG', 'TeamH']
+    return team_name in VALID_TEAM_NAMES

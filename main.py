@@ -39,7 +39,16 @@ def main():
                         print("Ungültige Eingabe. Bitte geben Sie 1, 2 oder 3 ein.")
                 except ValueError:
                     print("Ungültige Eingabe. Bitte geben Sie eine Zahl ein.")
-            spiel.tipp_abgeben(spieltag, spieler, begegnung, tipp)
+            heim_team, gast_team = begegnung.split(' vs ')
+            if not is_valid_team_name(heim_team) or not is_valid_team_name(gast_team):
+                print(f"Ungültige Teamnamen in der Begegnung: {begegnung}")
+                continue
+            print(f"Spieler: {spieler}, Begegnung: {begegnung}, Tipp: {tipp}")
+            confirmation = input("Möchten Sie diesen Tipp bestätigen? (ja/nein): ")
+            if confirmation.lower() == 'ja':
+                spiel.tipp_abgeben(spieltag, spieler, begegnung, tipp)
+            else:
+                print("Tipp wurde nicht gespeichert.")
     
     # Beispiel-Ergebnisse (könnten auch dynamisch eingegeben werden)
     ergebnisse = {'TeamA vs TeamB': 1, 'TeamC vs TeamD': 2}
@@ -50,6 +59,10 @@ def main():
     # Rangliste anzeigen
     rangliste = spiel.rangliste()
     print("Rangliste:", rangliste)
+
+def is_valid_team_name(team_name):
+    VALID_TEAM_NAMES = ['TeamA', 'TeamB', 'TeamC', 'TeamD', 'TeamE', 'TeamF', 'TeamG', 'TeamH']
+    return team_name in VALID_TEAM_NAMES
 
 if __name__ == "__main__":
     main()
