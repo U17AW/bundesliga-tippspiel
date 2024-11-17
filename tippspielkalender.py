@@ -25,5 +25,11 @@ class Tippspielkalender:
         return self.spieltage
 
 def is_valid_team_name(team_name):
-    VALID_TEAM_NAMES = ['TeamA', 'TeamB', 'TeamC', 'TeamD', 'TeamE', 'TeamF', 'TeamG', 'TeamH']
+    VALID_TEAM_NAMES = [
+        'FC Bayern München', 'Borussia Dortmund', 'RB Leipzig', 'Bayer 04 Leverkusen', 
+        'VfL Wolfsburg', 'Eintracht Frankfurt', 'Borussia Mönchengladbach', '1. FC Köln', 
+        'SC Freiburg', 'TSG 1899 Hoffenheim', '1. FSV Mainz 05', 'FC Augsburg', 
+        'Hertha BSC', 'VfB Stuttgart', 'Werder Bremen', '1. FC Union Berlin', 
+        'FC Schalke 04', 'Arminia Bielefeld'
+    ]
     return team_name in VALID_TEAM_NAMES

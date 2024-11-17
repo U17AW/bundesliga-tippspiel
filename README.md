@@ -28,3 +28,30 @@ Das Bundesliga-Tippspiel bietet folgende Funktionen:
 - **Tipp abgeben**: Geben Sie Tipps für die Begegnungen eines Spieltags ab.
 - **Punkte berechnen**: Berechnen Sie die Punkte basierend auf den Ergebnissen der Begegnungen.
 - **Rangliste anzeigen**: Zeigen Sie die Rangliste der Spieler basierend auf ihren Punkten an.
+
+## Aktualisierte Liste der 1. Bundesliga Teams
+
+Das Spiel enthält jetzt die aktuellen Teams der 1. Bundesliga:
+
+- FC Bayern München
+- Borussia Dortmund
+- RB Leipzig
+- Bayer 04 Leverkusen
+- VfL Wolfsburg
+- Eintracht Frankfurt
+- Borussia Mönchengladbach
+- 1. FC Köln
+- SC Freiburg
+- TSG 1899 Hoffenheim
+- 1. FSV Mainz 05
+- FC Augsburg
+- Hertha BSC
+- VfB Stuttgart
+- Werder Bremen
+- 1. FC Union Berlin
+- FC Schalke 04
+- Arminia Bielefeld
+
+## Generierung von 9 Spielen pro Spieltag
+
+Das Spiel generiert jetzt 9 Spiele pro Spieltag, um die tatsächliche Anzahl der Spiele in der 1. Bundesliga widerzuspiegeln.
